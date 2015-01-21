@@ -1,0 +1,29 @@
+;;windows num=1 when the emacs init
+(setq inhibit-startup-message t)
+
+;;emacs frame size
+(if (boundp 'window-system)
+    (setq default-frame-alist
+	  (append(list
+		  '(width . 120)
+		  '(height . 60)
+		  )
+default-frame-alist)))
+(setq inital-frame-alist default-frame-alist)
+
+
+;;setting for color-theme
+(add-to-list 'load-path "~/.emacs.d/color-theme")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-dark-laptop)))
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-initialize)
+;;      (color-theme-gray30)))
+
+;;setting for psvn
+
+;;setting for CUDA programming
